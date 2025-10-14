@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "public": true,
-  "routes": [
-    { "src": "/service-worker.js", "headers": { "Cache-Control": "no-cache" } },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/service-worker.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
+    }
   ]
 }
-git init
