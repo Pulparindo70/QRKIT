@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#06b6d4" />
+
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <title>QRKit — Generador de QR</title>
+
+    <style>
+      :root{
+        --bg1:#070b10; --bg2:#0b1220; --panel:rgba(17,24,39,.6);
+        --border:rgba(148,163,184,.2); --txt:#e5e7eb; --muted:#94a3b8;
+        --brand:#06b6d4; --brand2:#7c3aed;
+      }
+      html,body,#root{height:100%}
+      body{
+        margin:0; color:var(--txt);
+        background:
+          radial-gradient(900px 500px at 15% 0%, rgba(6,182,212,.15), transparent 60%),
+          radial-gradient(900px 500px at 85% 0%, rgba(124,58,237,.15), transparent 60%),
+          linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      }
+      /* Splash minimal */
+      #splash{
+        position:fixed; inset:0; z-index:9999; display:grid; place-items:center;
+        background:
+          radial-gradient(60% 40% at 20% 20%, rgba(124,58,237,.25), transparent 60%),
+          radial-gradient(60% 40% at 80% 20%, rgba(6,182,212,.25), transparent 60%),
+          linear-gradient(180deg, #05070b 0%, #0b0f14 100%);
+        transition:opacity .5s ease;
+      }
+      .logo-badge{
+        width:120px;height:120px;border-radius:28px;display:grid;place-items:center;
+        border:1px solid var(--border);
+        background:linear-gradient(145deg, rgba(6,182,212,.25), rgba(124,58,237,.25));
+        box-shadow:0 20px 60px rgba(0,0,0,.45), inset 0 0 40px rgba(6,182,212,.15);
+        animation:float 2.2s ease-in-out infinite;
+        font-size:52px;
+      }
+      .splash-title{margin-top:18px;font-weight:800;opacity:.9;letter-spacing:.3px}
+      .hidden-splash{opacity:0;pointer-events:none}
+      @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    </style>
+  </head>
+  <body>
+    <div id="splash">
+      <div style="text-align:center">
+        <div class="logo-badge">🔳</div>
+        <div class="splash-title">QRKit</div>
+      </div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
