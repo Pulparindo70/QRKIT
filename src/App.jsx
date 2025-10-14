@@ -433,9 +433,6 @@ export default function App({ onReady }) {
         )}
       </main>
 
-      <footer className="footer">
-        Offline · PNG/SVG · Presets · {fallbackMode ? "Modo compatibilidad" : "QR estilizado"} ✨
-      </footer>
     </div>
   );
 }

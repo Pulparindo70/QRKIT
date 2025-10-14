@@ -74,7 +74,7 @@ body{
 .mini-label{font-size:12px; opacity:.85}
 .btn{
   padding:10px 14px; border-radius:var(--radius-sm); border:1px solid #155e75;
-  background:linear-gradient(145deg, #06b6d4, #7c3aed); color:#0b0f14; font-weight:800;
+  background:linear-gradient(145deg, #06b6d4); color:#dcdcdc; font-weight:800;
   cursor:pointer;
 }
 .btn:active{transform:translateY(1px)}
