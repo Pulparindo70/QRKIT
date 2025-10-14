@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import "./styles.css"; // <— importante
 
 function hideSplash() {
   const el = document.getElementById("splash");
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
+// SW
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     const swUrl = `/service-worker.js?ts=${Date.now()}`;
