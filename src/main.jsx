@@ -17,10 +17,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
-// SW
-if ("serviceWorker" in navigator) {
+// SW: solo registrar en producción
+if ("serviceWorker" in navigator && window.location.protocol === "https:") {
   window.addEventListener("load", () => {
-    const swUrl = `/service-worker.js?ts=${Date.now()}`;
+    const swUrl = `/service-worker.js`;
     navigator.serviceWorker.register(swUrl).catch(console.error);
   });
 }
